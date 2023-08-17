@@ -1,0 +1,33 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    <h1 class="text-center"> 
+           Reporte Clientes Registrados
+    </h1>
+{% endblock titulo %}
+
+
+{% block contenido %}
+
+    <!-- <h4>Cantidad de empresas en la tabla {{ empresas|length }}</h4>       -->
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre Clientes</th>
+                <th>Apellido</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for c in clientes  %}
+            <tr>
+                <td>{{ c.nombre }}</td>
+                <td>{{ c.apellido }}</td>
+                <td>{{ c.email }}</td>
+            </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+{% endblock contenido %}

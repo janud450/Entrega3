@@ -1,0 +1,36 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+
+<h1 class="text-center"> 
+    Reporte Garantías Registradas
+</h1>
+
+{% endblock titulo %}
+
+
+{% block contenido %}
+
+
+    <h4> Número de Garantías {{ garantias|length }}</h4>
+  
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre del Banco</th>
+                <th>Número de Contrato</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for c in garantias  %}
+            <tr>
+                <td>{{ c.banco }}</td>
+                <td>{{ c.contrato }}</td>
+                <td>{{ c.valor }}</td>
+            </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+{% endblock contenido %}

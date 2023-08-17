@@ -1,0 +1,18 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    <h1 class="text-center"> 
+           Búsqueda
+    </h1>
+{% endblock titulo %}
+
+
+{% block contenido %}
+    <p> Por favor escriba el nombre de la empresa o caracteres de búsqueda para la coincidencia </p>
+    <form action="/buscarEmpresa2" method="get">
+        {% csrf_token %}
+        <p><b>Nombre Empresa:</b> <input type="text" name="buscar" id="buscar"></p>
+        <input type="submit" value="Buscar">
+    </form>
+{% endblock contenido %}
